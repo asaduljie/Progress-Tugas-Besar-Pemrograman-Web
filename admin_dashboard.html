@@ -1,0 +1,48 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Admin Dashboard</title><link rel="stylesheet" href="public/css/styles.css"><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script></head><body>
+<nav class="nav">
+  <a href="index.html" class="brand">Sulawesi<span class="brand-accent">Travel</span></a>
+  <div class="nav-right">
+    <a class="nav-link" href="index.html">Beranda</a>
+    <a class="nav-link" href="travels_list.html">Paket</a>
+    <a class="nav-link" href="admin_dashboard.html">Dashboard</a>
+    <a class="nav-link" href="travels_list.html">Kelola Paket</a>
+    <a class="nav-link" href="reservations.html">Reservasi</a>
+    <a class="nav-link" href="admin_payments.html">Pembayaran</a>
+  </div>
+</nav>
+
+<div class="container layout">
+<div class="sidebar">
+  <h3>Menu</h3>
+  <ul class="side-menu">
+    <li><a href="index.html" class="active">Beranda</a></li>
+    <li><a href="travels_list.html">Paket Wisata</a></li>
+    <li><a href="admin_dashboard.html">Dashboard Admin</a></li>
+    <li><a href="admin_users.html">Manajemen User</a></li>
+    <li><a href="reservations.html">Reservasi</a></li>
+    <li><a href="admin_payments.html">Pembayaran</a></li>
+  </ul>
+</div>
+
+<main class="main-content">
+  <h1>Dashboard Admin</h1>
+  <div class="grid-stats"><div class="stat-box"><h3>4</h3><p>Paket Wisata</p></div><div class="stat-box"><h3>7</h3><p>Reservasi</p></div></div>
+  <div class="chart-card"><canvas id="resChart"></canvas></div>
+  <h2>Terakhir Ditambahkan</h2>
+  <div class="cards"><div class="card"><img class="card-img" src="https://picsum.photos/seed/samalona/800/400"><div class="card-body"><h3>Pulau Samalona - Snorkeling</h3><p class="muted">Makassar</p></div></div><div class="card"><img class="card-img" src="https://picsum.photos/seed/bantimurung/800/400"><div class="card-body"><h3>Taman Nasional Bantimurung</h3><p class="muted">Maros</p></div></div><div class="card"><img class="card-img" src="https://picsum.photos/seed/toraja/800/400"><div class="card-body"><h3>Toraja Budaya 3 Hari</h3><p class="muted">Tana Toraja</p></div></div><div class="card"><img class="card-img" src="https://picsum.photos/seed/wakatobi/800/400"><div class="card-body"><h3>Diving Wakatobi (Promo)</h3><p class="muted">Wakatobi</p></div></div></div>
+</main>
+</div>
+<footer class="site-footer">
+  &copy; 2025 Sulawesi Travel. All rights reserved.
+</footer>
+
+<script>
+(function(){
+  var ctx = document.getElementById('resChart');
+  if(ctx){
+    new Chart(ctx, {type:'line', data:{labels:['2024-12','2025-01','2025-02','2025-03','2025-04','2025-05'], datasets:[{label:'Reservasi', data:[1,2,3,2,4,5], fill:true, tension:0.3}]}, options:{responsive:true}});
+  }
+})();
+</script>
+<script src="public/js/script.js"></script>
+</body></html>
